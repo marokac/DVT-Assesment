@@ -1,0 +1,23 @@
+<div class="container mg-top-40">
+    <h2>Details</h2><br>
+    <div class="row center-items">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-6">
+            <img [src]="details?.picture_big" alt="Avatar" style="width:100%">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-6">
+            <p class="u-font-24">name: {{details?.name}}</p>
+            <p class="u-font-24">Albums: {{details?.nb_album}}</p>
+            <p class="u-font-24">Fans: {{details?.nb_fan}}</p>
+        </div>
+    </div><br>
+    <div *ngIf="albums?.length && details?.nb_album"class="row">
+        <h2>Albums</h2><br>
+        <div *ngFor="let album of albums" class="card u-sp-top u-hr-sp col-12 col-sm-12 col-md-3 col-lg-3 col-xlg-3">
+             <img [src]="album?.cover" alt="Avatar" style="width:100%">
+             <div class="card-wrapper">
+               <h4><b>{{album?.title}}</b></h4> 
+               <p>Fans: {{album?.fans}}</p> 
+             </div>
+        </div>
+     </div><br>
+</div>

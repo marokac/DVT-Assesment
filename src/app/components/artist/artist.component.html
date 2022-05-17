@@ -1,0 +1,18 @@
+
+    <div [formGroup]="searchForm" class="input-group input-group-lg header col-12 col-sm-12 col-md-12 col-lg-12">
+      <input formControlName="searchText" placeholder="search for artists" type="searchText" class="form-control">
+    </div>
+    <div class="container">
+        <div *ngIf="searchResult.length"class="row center-items">
+           <div *ngFor="let result of searchResult "  (click)="viewDetails(result?.artist)" class="card col-12 col-sm-12 col-md-3 col-lg-3 col-xlg-3">
+                <img [src]="result?.artist?.picture" alt="Avatar" style="width:100%">
+                <div class="card-wrapper">
+                  <h4><b>{{result?.artist?.name}}</b></h4> 
+                  <!-- artist fans not returned with the search response -->
+                  <p>Rank: {{result?.rank}}</p> 
+                  <p>Latest album: {{result?.album?.title}}</p> 
+                </div>
+           </div>
+        </div>
+    </div>
+

@@ -1,0 +1,16 @@
+
+{
+  "/search*": {
+    "target": "https://api.deezer.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+
+  "/artist/*": {
+    "target": "https://api.deezer.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
